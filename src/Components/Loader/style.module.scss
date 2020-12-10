@@ -1,0 +1,95 @@
+@import '../../styles/colors.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.loaderItem{
+	width: 1000px;
+	height: 140px;
+	background-color: $postGrey;
+	margin: 16px auto;
+	border-radius: $borderRadius;
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.loaderPostItem{
+	width: 860px;
+	height: 140px;
+	background-color: $commonWhite;
+	border-radius: 0 $borderRadius $borderRadius 0;
+	padding: 20px;
+}
+
+.loaderImgPlace{
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+.loaderImg{
+width: 80px;
+height: 80px;
+background: $newGrey;
+border-radius: $borderRadius;
+
+}
+
+.loaderPostItemFirst{
+display: flex;
+
+}
+
+.loaderPostItemFirstLeft{
+@include loaderContent;
+width: 130px;
+
+}
+
+.loaderPostItemFirstRight{
+@include loaderContent;
+width: 70px;
+margin-left: 16px;
+}
+
+.loaderDatePlace, .loaderPostTop, .loaderPostBottom{
+	@include loaderContentThin;
+}
+
+.loaderDatePlace{
+	margin-top: 16px;
+	width: 200px;
+}
+
+.loaderPostTop{
+	margin-top: 16px;
+	width: 535px;
+}
+
+.loaderPostBottom{
+	margin-top: 5px;
+	width: 380px;
+}
+
+.postsListUpcoming{
+	@include dividingLine;
+	margin-top: 50px;
+}
+
+.postsListUpcoming::before{
+	@include beforLine;
+}
+
+.postsListUpcoming::after{
+	@include afterLine;
+}
+
+.postsListHistory{
+	@include dividingLine;
+}
+
+.postsListHistory::before{
+	@include beforLine;
+}
+
+.postsListHistory::after{
+	@include afterLine;
+}

@@ -1,0 +1,39 @@
+@mixin  dividingLine {
+	background: $newGrey;
+	width: 120px;
+	border-radius: $borderRadius;
+	text-align: center;
+	position: relative;
+	margin: 0 auto;
+	
+}
+
+@mixin  beforAfterLine {
+	display: block;
+	width: 440px;
+	content: '';
+	position: absolute;
+	border-bottom: 3px solid $newGrey;
+	top: 50%;
+}
+
+@mixin beforLine {
+	@include beforAfterLine;
+	right: 110px;
+}
+
+@mixin afterLine {
+	@include beforAfterLine;
+	left: 110px;
+}
+
+@mixin loaderContent {
+	background: $newGrey;
+border-radius: $borderRadius;
+height: 25px;
+}
+
+@mixin loaderContentThin {
+	@include loaderContent;
+	height: 14px;
+}

@@ -1,0 +1,52 @@
+@import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: $commonWhite;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 80px;
+  margin-bottom: 90px;
+}
+
+.headerImg{
+	align-self: center;
+	
+}
+
+.headerImg img{
+	width: 420px;
+}
+
+.headerUserInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  
+}
+.headerUserInfo_text{
+	font-weight: 400;
+	font-size: $basicFont;
+	line-height: $lineHeight+7px;
+	color: $decorGrey;
+	
+
+}
+
+.headerUserInfo_text span{
+	font-weight: $fontWeight;
+	color: $basicBlack;
+}
+
+.headerUserInfo_img img{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	margin-left: 20px;
+	object-fit: cover;
+}

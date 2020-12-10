@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.postsListUpcoming{
+	@include dividingLine;
+}
+
+.postsListUpcoming::before{
+	@include beforLine;
+}
+
+.postsListUpcoming::after{
+	@include afterLine;
+}
+
+.postsListHistory{
+	@include dividingLine;
+}
+
+.postsListHistory::before{
+	@include beforLine;
+}
+
+.postsListHistory::after{
+	@include afterLine;
+}
