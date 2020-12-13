@@ -1,11 +1,11 @@
 import React from 'react';
-import classes from './styles.module.scss';
 import Post from '../Post';
 
-const Posts = () => {
-	return <div className={classes.posts}>
-		<Post />
-	</div>
+
+const Posts = ({postsList}) => {
+	return postsList.map(post => (
+		<Post post={post} key={post.id} />)
+	)
 }
 
 export default Posts;

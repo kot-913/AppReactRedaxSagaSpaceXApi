@@ -25,3 +25,15 @@
 .postsListHistory::after{
 	@include afterLine;
 }
+.footerButton{
+	width: 130px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 60px;
+	margin-top: 40px;
+}
+
+.footerMeniu{
+	margin-right: 10px;
+}

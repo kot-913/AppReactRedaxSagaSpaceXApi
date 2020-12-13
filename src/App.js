@@ -1,27 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import "../src/styles/reset.scss";
 import Header from "./Components/Header";
+import { fetchPosts } from "./Components/redux/actions";
 import PostsList from "../src/Components/PostsList";
-import classes from "./App.module.scss";
-import Menu from "./assets/menu.png";
-import Loader from "./Components/Loader";
 import Error from "./Components/Error";
+import classes from "./App.module.scss";
 
-function App() {
+function App({ fetchPosts, isError }) {
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  console.log("error", isError);
+
   return (
     <div className={classes.app}>
       <Header />
-      <PostsList />
-      <Loader />
-      <Error />
-      <div className={classes.footer}>
-        <div className={classes.footerMeniu}>
-          <img src={Menu} alt="menu" />
-        </div>
-        <div className={classes.footerText}>SEE MORE</div>
-      </div>
+      {isError ? <Error /> : <PostsList />}
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  fetchPosts: () => dispatch(fetchPosts()),
+});
+
+const mapStateToProps = (postsReducer) => ({
+  isError: postsReducer.isError,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
