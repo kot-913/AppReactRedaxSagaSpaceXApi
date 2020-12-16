@@ -12,8 +12,6 @@ function App({ fetchPosts, isError }) {
     fetchPosts();
   }, []);
 
-  console.log("error", isError);
-
   return (
     <div className={classes.app}>
       <Header />
@@ -26,8 +24,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchPosts: () => dispatch(fetchPosts()),
 });
 
-const mapStateToProps = (postsReducer) => ({
-  isError: postsReducer.isError,
+const mapStateToProps = (store) => ({
+  isError: store.posts.isError,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

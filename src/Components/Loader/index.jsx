@@ -25,19 +25,4 @@ const LoaderItem = () => {
 }
 
 
-const Loader = () => {
-	return (
-		<div>
-			<div className={classes.postsListUpcoming}>Upcoming</div>
-			<LoaderItem />
-			<LoaderItem />
-			<LoaderItem />
-			<div className={classes.postsListUpcoming}>Upcoming</div>
-			<LoaderItem />
-			<LoaderItem />
-			<LoaderItem />
-		</div>
-	)
-}
-
-export default Loader;
+export default LoaderItem;

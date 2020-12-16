@@ -4,6 +4,7 @@ import {
   HIDE_LOADER,
   PUT_POSTS,
   GET_ERROR,
+  OFFSET_INCREMENT,
 } from "./types";
 
 export function fetchPosts() {
@@ -39,5 +40,11 @@ export function hideLoader() {
 export function getError() {
   return {
     type: GET_ERROR,
+  };
+}
+
+export function incrementOffset() {
+  return {
+    type: OFFSET_INCREMENT,
   };
 }

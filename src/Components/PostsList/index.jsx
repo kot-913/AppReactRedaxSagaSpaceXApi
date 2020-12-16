@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import classes from './style.module.scss';
 import Posts from '../Posts';
 import Menu from "../../assets/menu.png";
+import { fetchPosts } from '../redux/actions';
 
 
-const PostsList = ({upcoming, history}) => {
+const PostsList = ({ upcoming, history, loadMore }) => {
 	return <div className={classes.postsList}>
 		<div className={classes.postsListUpcoming}>Upcoming</div>
 		<Posts postsList={ upcoming } />
@@ -15,7 +16,7 @@ const PostsList = ({upcoming, history}) => {
         <div className={classes.footerMeniu}>
           <img src={Menu} alt="menu" />
         </div>
-        <div className={classes.footerText}>SEE MORE</div>
+        <div onClick={loadMore} className={classes.footerText}>SEE MORE</div>
       </button>
 	</div>
 }
@@ -24,9 +25,8 @@ const mapStateToProps = (state) => ({
 	history: state.posts.history,
 });
   
-// const mapDispatchToProps = (dispatch) => ({
-// 	loadPosts: () => dispatch(loadPosts()),
-// 	loadSeeMore: () => dispatch(loadSeeMore())
-// })
+const mapDispatchToProps = (dispatch) => ({
+	loadMore: () => dispatch(fetchPosts())
+})
 
-export default connect(mapStateToProps, null)(PostsList);
+export default connect(mapStateToProps, mapDispatchToProps)(PostsList);

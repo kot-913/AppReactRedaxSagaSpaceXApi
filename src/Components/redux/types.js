@@ -3,3 +3,4 @@ export const REQUEST_POST = "POST/ REQUEST_POST";
 export const SHOW_LOADER = "APP/SHOW_LOADER";
 export const HIDE_LOADER = "APP/HIDE_LOADER";
 export const GET_ERROR = "APP/GET_ERROR";
+export const OFFSET_INCREMENT = "POST/OFFSET_INCREMENT";
