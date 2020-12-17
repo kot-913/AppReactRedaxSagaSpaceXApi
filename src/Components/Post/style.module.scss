@@ -15,6 +15,8 @@
 
 .postImg img{
 margin-left: 22px;
+height: 96px;
+width: auto;
 	
 }
 
@@ -50,6 +52,18 @@ margin-left: 22px;
 	color: $buttonPinkText;
 	text-align: center;
 	padding: 4px;
+	&_unknown{
+		background-color: #B3E5FC;
+        color: #42A5F5;
+    }
+    &_failure{
+        background-color: #FFCDD2;
+        color: #EF5350;
+    }
+    &_success{
+        background-color: #B2DFDB;
+        color: #26A69A;
+	}
 }
 
 .firstLinePostTitle{
@@ -92,9 +106,19 @@ margin-left: 22px;
 
 .watchPost{
 display: flex;
+text-decoration: none;
+&:hover{
+	transform: scale(1.3);
+}
 }
 
 .watchPostText{
 	color: $buttonPinkText;
 	margin-left: 10px;
+}
+
+.firstLinePostMaximize{
+	&:hover{
+		transform: scale(1.3);
+	}
 }
